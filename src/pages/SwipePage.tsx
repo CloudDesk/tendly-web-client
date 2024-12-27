@@ -12,6 +12,8 @@ export default function SwipePage() {
       await axios.post(`${config.apiUrl}/biometric/swipe`, {
         biometricId,
         timestamp: new Date().toISOString(),
+      }, {
+        withCredentials: true,
       });
 
       setStatus({ success: true, message: 'Swipe recorded successfully' });
